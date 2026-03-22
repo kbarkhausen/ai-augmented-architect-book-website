@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects
+# Clean URLs
+/resources.html    /resources    301
+/errata.html       /errata       301
+
+# Handle trailing slashes
+/resources/        /resources    301
+/errata/           /errata       301
