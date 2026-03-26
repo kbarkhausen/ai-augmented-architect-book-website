@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx vite:*)"
+      "Bash(npx vite:*)",
+      "Bash(magick --version)",
+      "Bash(convert --version)",
+      "Bash(npx --yes sharp-cli --input public/images/book-logo.png --output public/favicon.ico resize 32 32)",
+      "Bash(npx --yes png-to-ico public/images/book-logo.png)"
     ]
   }
 }
