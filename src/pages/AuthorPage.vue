@@ -30,11 +30,18 @@
             transformation yet.
           </p>
           <p>
-            As the founder of <strong>5 Stars Technology</strong>, Klaus works with
+            Klaus works with
             enterprise teams to design and implement AI-powered development workflows.
             His hands-on experience building production systems with Claude Code,
             Cursor, and multi-agent orchestration is what makes this book uniquely
             practical — every pattern has been battle-tested in real projects.
+          </p>
+          <p>
+            Klaus is also the author of
+            <a href="https://www.totalfitness.ai" target="_blank" rel="noopener"><strong>Total Fitness with AI</strong></a>,
+            a guide to using ChatGPT and AI to develop personalized health and fitness
+            plans tailored to your goals — a reflection of his dedication to continuous
+            growth, commitment, and discipline in every area of life.
           </p>
           <div class="author-links">
             <a href="https://klausbarkhausen.com" target="_blank" rel="noopener">

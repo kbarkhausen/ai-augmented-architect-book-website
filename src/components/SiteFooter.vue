@@ -27,7 +27,6 @@
           </div>
           <div class="footer-column">
             <h4>Connect</h4>
-            <a href="https://5starstechnology.com" target="_blank" rel="noopener">5 Stars Technology</a>
             <a href="mailto:klaus@barkhausen.us">Contact</a>
           </div>
         </div>
@@ -35,7 +34,6 @@
 
       <div class="footer-bottom">
         <p>&copy; {{ year }} Klaus Barkhausen. All rights reserved.</p>
-        <p>Published by 5 Stars Technology</p>
       </div>
     </div>
   </footer>
