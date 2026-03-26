@@ -1,210 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free resources for The AI-Augmented Architect book - code samples, video tutorials, and changelog.">
-    <title>Resources | The AI-Augmented Architect</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
-    <style>
-        .resources-hero {
-            padding: 160px 0 80px;
-            background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
-        }
-        
-        .resources-hero h1 {
-            margin-bottom: var(--space-md);
-        }
-        
-        .code-section {
-            padding: var(--space-3xl) 0;
-        }
-        
-        .code-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-xl);
-        }
-        
-        .code-card {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-        }
-        
-        .code-card-header {
-            padding: var(--space-lg);
-            border-bottom: 1px solid var(--color-border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .code-card-header h3 {
-            font-size: 1rem;
-        }
-        
-        .copy-btn {
-            padding: var(--space-sm) var(--space-md);
-            background: var(--color-bg-hover);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            color: var(--color-text-muted);
-            font-size: 0.875rem;
-            cursor: pointer;
-            transition: all var(--transition-fast);
-        }
-        
-        .copy-btn:hover {
-            background: var(--color-primary);
-            color: white;
-            border-color: var(--color-primary);
-        }
-        
-        .code-content {
-            padding: var(--space-lg);
-            overflow-x: auto;
-        }
-        
-        .code-content pre {
-            font-family: var(--font-mono);
-            font-size: 0.875rem;
-            line-height: 1.6;
-            color: var(--color-text-muted);
-            margin: 0;
-        }
-        
-        .code-content code {
-            font-family: inherit;
-        }
-        
-        #videos, #changelog {
-            scroll-margin-top: 100px;
-        }
-        
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-        }
-        
-        .video-card {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-xl);
-            padding: var(--space-xl);
-            transition: all var(--transition-base);
-        }
-        
-        .video-card:hover {
-            border-color: var(--color-primary);
-            transform: translateY(-4px);
-        }
-        
-        .video-card h4 {
-            margin-bottom: var(--space-sm);
-        }
-        
-        .video-card p {
-            font-size: 0.875rem;
-            margin-bottom: var(--space-md);
-        }
-        
-        .video-link {
-            font-weight: 600;
-            font-size: 0.875rem;
-        }
-        
-        .changelog-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .changelog-item {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-xl);
-            padding: var(--space-xl);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .changelog-date {
-            font-size: 0.875rem;
-            color: var(--color-primary-light);
-            margin-bottom: var(--space-sm);
-        }
-        
-        .changelog-item h4 {
-            margin-bottom: var(--space-md);
-        }
-        
-        .changelog-item ul {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-sm);
-        }
-        
-        .changelog-item li {
-            color: var(--color-text-muted);
-            font-size: 0.875rem;
-            padding-left: var(--space-lg);
-            position: relative;
-        }
-        
-        .changelog-item li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--color-primary);
-        }
-        
-        @media (max-width: 968px) {
-            .code-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .video-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 640px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">
-                <span class="logo-icon">🏗️</span>
-                <span class="logo-text">Augmented Architect</span>
-            </a>
-            <div class="nav-links">
-                <a href="/#features">What's Inside</a>
-                <a href="/#journey">Your Journey</a>
-                <a href="/snippets">Code Snippets</a>
-                        <a href="/cheatsheet">Cheat Sheet</a>
-                <a href="/cheatsheet">Cheat Sheet</a>
-                <a href="/resources">Resources</a>
-                <a href="/#buy" class="nav-cta">Get the Book</a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
+<template>
     <!-- Hero -->
     <header class="resources-hero">
         <div class="container">
@@ -222,7 +16,7 @@
                     <p style="font-size: 0.875rem;">Search, copy, and download every code example from the book.</p>
                 </div>
                 <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
-                    <a href="/snippets" class="btn btn-primary">Browse All Snippets</a>
+                    <router-link to="/snippets" class="btn btn-primary">Browse All Snippets</router-link>
                     <a href="https://github.com/kbarkhausen/augmented-architect-book" target="_blank" class="btn btn-secondary">GitHub Repo</a>
                 </div>
             </div>
@@ -236,12 +30,12 @@
                 <h2>📝 Quick Start Templates</h2>
                 <p>Most popular configurations from the book</p>
             </div>
-            
+
             <div class="code-grid">
                 <div class="code-card">
                     <div class="code-card-header">
                         <h3>CLAUDE.md Template</h3>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <button class="copy-btn" @click="copyCode($event)">Copy</button>
                     </div>
                     <div class="code-content">
 <pre><code># Project Name
@@ -280,11 +74,11 @@ Brief description of what this project does.
 - Use server actions for mutations</code></pre>
                     </div>
                 </div>
-                
+
                 <div class="code-card">
                     <div class="code-card-header">
                         <h3>AGENTS.md Template</h3>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <button class="copy-btn" @click="copyCode($event)">Copy</button>
                     </div>
                     <div class="code-content">
 <pre><code># AI Agent Instructions
@@ -312,11 +106,11 @@ This file provides instructions for any AI coding assistant.
 - Use parameterized queries</code></pre>
                     </div>
                 </div>
-                
+
                 <div class="code-card">
                     <div class="code-card-header">
                         <h3>.cursorrules Template</h3>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <button class="copy-btn" @click="copyCode($event)">Copy</button>
                     </div>
                     <div class="code-content">
 <pre><code>You are an expert TypeScript developer.
@@ -344,14 +138,14 @@ This file provides instructions for any AI coding assistant.
 - Use server components by default</code></pre>
                     </div>
                 </div>
-                
+
                 <div class="code-card">
                     <div class="code-card-header">
                         <h3>Custom /implement Command</h3>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <button class="copy-btn" @click="copyCode($event)">Copy</button>
                     </div>
                     <div class="code-content">
-<pre><code>---
+<pre><code v-pre>---
 name: implement
 description: Implement a feature from an issue
 arguments:
@@ -377,38 +171,38 @@ arguments:
                 <h2>🎬 Video Tutorials</h2>
                 <p>Curated tutorials to accelerate your learning</p>
             </div>
-            
+
             <div class="video-grid">
                 <div class="video-card">
                     <h4>Claude Code Fundamentals</h4>
                     <p>Official introduction to Claude Code's architecture and core concepts.</p>
                     <a href="https://www.youtube.com/results?search_query=claude+code+tutorial+2026" target="_blank" class="video-link">Watch on YouTube →</a>
                 </div>
-                
+
                 <div class="video-card">
                     <h4>Cursor Agent Mode Deep Dive</h4>
                     <p>Mastering Cursor's Agent Mode for autonomous code generation.</p>
                     <a href="https://www.youtube.com/results?search_query=cursor+agent+mode+tutorial" target="_blank" class="video-link">Watch on YouTube →</a>
                 </div>
-                
+
                 <div class="video-card">
                     <h4>MCP Server Setup</h4>
                     <p>Setting up Model Context Protocol servers for extended capabilities.</p>
                     <a href="https://www.youtube.com/results?search_query=MCP+model+context+protocol+tutorial" target="_blank" class="video-link">Watch on YouTube →</a>
                 </div>
-                
+
                 <div class="video-card">
                     <h4>CLAUDE.md Best Practices</h4>
                     <p>How to write effective project configuration files.</p>
                     <a href="https://www.youtube.com/results?search_query=CLAUDE.md+configuration" target="_blank" class="video-link">Watch on YouTube →</a>
                 </div>
-                
+
                 <div class="video-card">
                     <h4>GitHub Actions + AI Agents</h4>
                     <p>Automating your CI/CD with AI-powered workflows.</p>
                     <a href="https://www.youtube.com/results?search_query=github+actions+ai+agents" target="_blank" class="video-link">Watch on YouTube →</a>
                 </div>
-                
+
                 <div class="video-card">
                     <h4>Multi-Agent Orchestration</h4>
                     <p>Coordinating multiple AI agents for complex tasks.</p>
@@ -425,7 +219,7 @@ arguments:
                 <h2>📰 Changelog</h2>
                 <p>Latest updates to Claude Code, Cursor, and AI models</p>
             </div>
-            
+
             <div class="changelog-list">
                 <div class="changelog-item">
                     <div class="changelog-date">March 17, 2026</div>
@@ -437,7 +231,7 @@ arguments:
                         <li>Opus 4.6 now default model</li>
                     </ul>
                 </div>
-                
+
                 <div class="changelog-item">
                     <div class="changelog-date">March 5, 2026</div>
                     <h4>Cursor Automations</h4>
@@ -448,7 +242,7 @@ arguments:
                         <li>Schedule-based execution with cron expressions</li>
                     </ul>
                 </div>
-                
+
                 <div class="changelog-item">
                     <div class="changelog-date">February 19, 2026</div>
                     <h4>Claude Sonnet 4.6</h4>
@@ -459,7 +253,7 @@ arguments:
                         <li>Pricing: $3/$15 per million tokens</li>
                     </ul>
                 </div>
-                
+
                 <div class="changelog-item">
                     <div class="changelog-date">February 2026</div>
                     <h4>Google Gemini 3.1 Pro</h4>
@@ -472,58 +266,187 @@ arguments:
             </div>
         </div>
     </section>
+</template>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span class="logo-icon">🏗️</span>
-                        <span class="logo-text">Augmented Architect</span>
-                    </div>
-                    <p>The definitive guide to AI-augmented development.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Book</h4>
-                        <a href="/#features">What's Inside</a>
-                        <a href="/#journey">Your Journey</a>
-                        <a href="/#buy">Buy Now</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Resources</h4>
-                        <a href="/resources">Code Samples</a>
-                        <a href="/resources#videos">Videos</a>
-                        <a href="/errata">Errata</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <a href="https://5starstechnology.com" target="_blank">5 Stars Technology</a>
-                        <a href="mailto:klaus@barkhausen.us">Contact</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Klaus Barkhausen. All rights reserved.</p>
-                <p>Published by 5 Stars Technology</p>
-            </div>
-        </div>
-    </footer>
+<script setup>
+function copyCode(event) {
+    const button = event.currentTarget
+    const codeBlock = button.closest('.code-card').querySelector('code')
+    navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+        button.textContent = 'Copied!'
+        setTimeout(() => {
+            button.textContent = 'Copy'
+        }, 2000)
+    })
+}
+</script>
 
-    <script>
-        function copyCode(button) {
-            const codeBlock = button.closest('.code-card').querySelector('code');
-            navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-                button.textContent = 'Copied!';
-                setTimeout(() => {
-                    button.textContent = 'Copy';
-                }, 2000);
-            });
-        }
-    </script>
-    <script src="/js/main.js"></script>
-</body>
-</html>
+<style scoped>
+.resources-hero {
+    padding: 160px 0 80px;
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+}
+
+.resources-hero h1 {
+    margin-bottom: var(--space-md);
+}
+
+.code-section {
+    padding: var(--space-3xl) 0;
+}
+
+.code-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+}
+
+.code-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.code-card-header {
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.code-card-header h3 {
+    font-size: 1rem;
+}
+
+.copy-btn {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-bg-hover);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.copy-btn:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.code-content {
+    padding: var(--space-lg);
+    overflow-x: auto;
+}
+
+.code-content pre {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.code-content code {
+    font-family: inherit;
+}
+
+#videos, #changelog {
+    scroll-margin-top: 100px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.video-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+}
+
+.video-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+}
+
+.video-card h4 {
+    margin-bottom: var(--space-sm);
+}
+
+.video-card p {
+    font-size: 0.875rem;
+    margin-bottom: var(--space-md);
+}
+
+.video-link {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.changelog-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.changelog-item {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+.changelog-date {
+    font-size: 0.875rem;
+    color: var(--color-primary-light);
+    margin-bottom: var(--space-sm);
+}
+
+.changelog-item h4 {
+    margin-bottom: var(--space-md);
+}
+
+.changelog-item ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.changelog-item li {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    padding-left: var(--space-lg);
+    position: relative;
+}
+
+.changelog-item li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+}
+
+@media (max-width: 968px) {
+    .code-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

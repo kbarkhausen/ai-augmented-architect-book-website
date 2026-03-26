@@ -1,352 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quick reference cheat sheet for The AI-Augmented Architect book - commands, tips, and key points by chapter.">
-    <title>Cheat Sheet | The AI-Augmented Architect</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
-    <style>
-        .cheatsheet-hero {
-            padding: 160px 0 40px;
-            background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
-        }
-        
-        .cheatsheet-hero h1 {
-            margin-bottom: var(--space-md);
-        }
-        
-        .cheatsheet-nav {
-            background: var(--color-bg-elevated);
-            border-bottom: 1px solid var(--color-border);
-            padding: var(--space-lg) 0;
-            position: sticky;
-            top: 60px;
-            z-index: 100;
-            overflow-x: auto;
-        }
-        
-        .cheatsheet-nav-inner {
-            display: flex;
-            gap: var(--space-sm);
-            padding: 0 var(--space-lg);
-            min-width: max-content;
-        }
-        
-        .cheatsheet-nav a {
-            padding: var(--space-sm) var(--space-md);
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            font-size: 0.875rem;
-            color: var(--color-text-muted);
-            white-space: nowrap;
-            transition: all var(--transition-fast);
-        }
-        
-        .cheatsheet-nav a:hover {
-            border-color: var(--color-primary);
-            color: var(--color-text);
-        }
-        
-        .cheatsheet-content {
-            padding: var(--space-3xl) 0;
-        }
-        
-        .part-section {
-            margin-bottom: var(--space-4xl);
-        }
-        
-        .part-header {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-            margin-bottom: var(--space-2xl);
-            padding-bottom: var(--space-lg);
-            border-bottom: 2px solid var(--color-border);
-        }
-        
-        .part-icon {
-            font-size: 2rem;
-        }
-        
-        .part-header h2 {
-            font-size: 1.5rem;
-        }
-        
-        .chapter-card {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-xl);
-            margin-bottom: var(--space-xl);
-            overflow: hidden;
-        }
-        
-        .chapter-header {
-            padding: var(--space-lg);
-            background: var(--color-bg-elevated);
-            border-bottom: 1px solid var(--color-border);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .chapter-header:hover {
-            background: var(--color-bg-hover);
-        }
-        
-        .chapter-header h3 {
-            font-size: 1.125rem;
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-        }
-        
-        .chapter-num {
-            color: var(--color-primary-light);
-            font-weight: 400;
-        }
-        
-        .chapter-toggle {
-            font-size: 1.25rem;
-            color: var(--color-text-muted);
-            transition: transform var(--transition-fast);
-        }
-        
-        .chapter-card.open .chapter-toggle {
-            transform: rotate(180deg);
-        }
-        
-        .chapter-content {
-            padding: var(--space-xl);
-            display: none;
-        }
-        
-        .chapter-card.open .chapter-content {
-            display: block;
-        }
-        
-        .cheat-section {
-            margin-bottom: var(--space-xl);
-        }
-        
-        .cheat-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .cheat-section h4 {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--color-primary-light);
-            margin-bottom: var(--space-md);
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-        }
-        
-        .command-grid {
-            display: grid;
-            gap: var(--space-sm);
-        }
-        
-        .command-item {
-            display: flex;
-            gap: var(--space-md);
-            padding: var(--space-md);
-            background: var(--color-bg-elevated);
-            border-radius: var(--radius-md);
-            align-items: flex-start;
-        }
-        
-        .command-code {
-            font-family: var(--font-mono);
-            font-size: 0.875rem;
-            color: var(--color-secondary);
-            background: var(--color-bg);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-sm);
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-        
-        .command-desc {
-            font-size: 0.875rem;
-            color: var(--color-text-muted);
-        }
-        
-        .tip-list {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-sm);
-        }
-        
-        .tip-item {
-            display: flex;
-            gap: var(--space-md);
-            padding: var(--space-md);
-            background: var(--color-bg-elevated);
-            border-radius: var(--radius-md);
-            border-left: 3px solid var(--color-accent);
-        }
-        
-        .tip-icon {
-            flex-shrink: 0;
-        }
-        
-        .tip-text {
-            font-size: 0.875rem;
-            color: var(--color-text-muted);
-        }
-        
-        .tip-text strong {
-            color: var(--color-text);
-        }
-        
-        .key-point {
-            display: flex;
-            gap: var(--space-md);
-            padding: var(--space-md);
-            background: var(--color-bg-elevated);
-            border-radius: var(--radius-md);
-        }
-        
-        .key-point-icon {
-            color: var(--color-primary-light);
-            flex-shrink: 0;
-        }
-        
-        .key-point-text {
-            font-size: 0.875rem;
-            color: var(--color-text-muted);
-        }
-        
-        .file-ref {
-            font-family: var(--font-mono);
-            font-size: 0.8125rem;
-            color: var(--color-primary-light);
-            background: var(--color-bg);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-sm);
-        }
-        
-        .quick-ref-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.875rem;
-        }
-        
-        .quick-ref-table th {
-            text-align: left;
-            padding: var(--space-md);
-            background: var(--color-bg-elevated);
-            color: var(--color-text);
-            font-weight: 600;
-            border-bottom: 1px solid var(--color-border);
-        }
-        
-        .quick-ref-table td {
-            padding: var(--space-md);
-            border-bottom: 1px solid var(--color-border);
-            color: var(--color-text-muted);
-        }
-        
-        .quick-ref-table code {
-            font-family: var(--font-mono);
-            font-size: 0.8125rem;
-            color: var(--color-secondary);
-            background: var(--color-bg);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-sm);
-        }
-        
-        .print-btn {
-            position: fixed;
-            bottom: var(--space-xl);
-            right: var(--space-xl);
-            padding: var(--space-md) var(--space-xl);
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            border-radius: var(--radius-lg);
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-        }
-        
-        .print-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        @media print {
-            .nav, .cheatsheet-nav, .print-btn, .footer {
-                display: none !important;
-            }
-            
-            .cheatsheet-hero {
-                padding-top: 0;
-            }
-            
-            .chapter-card {
-                break-inside: avoid;
-            }
-            
-            .chapter-content {
-                display: block !important;
-            }
-            
-            .chapter-toggle {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .command-item {
-                flex-direction: column;
-            }
-            
-            .print-btn {
-                bottom: var(--space-md);
-                right: var(--space-md);
-                padding: var(--space-sm) var(--space-md);
-                font-size: 0.875rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">
-                <span class="logo-icon">🏗️</span>
-                <span class="logo-text">Augmented Architect</span>
-            </a>
-            <div class="nav-links">
-                <a href="/#features">What's Inside</a>
-                <a href="/snippets">Code Snippets</a>
-                <a href="/cheatsheet">Cheat Sheet</a>
-                <a href="/resources">Resources</a>
-                <a href="/#buy" class="nav-cta">Get the Book</a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
+<template>
     <!-- Hero -->
     <header class="cheatsheet-hero">
         <div class="container">
@@ -371,17 +23,17 @@
     <!-- Cheat Sheet Content -->
     <main class="cheatsheet-content">
         <div class="container">
-            
+
             <!-- Part I: Foundations -->
             <section id="part1" class="part-section">
                 <div class="part-header">
                     <span class="part-icon">🚗</span>
                     <h2>Part I: Foundations</h2>
                 </div>
-                
+
                 <!-- Chapter 1 -->
-                <div class="chapter-card open">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch1') }">
+                    <div class="chapter-header" @click="toggleChapter('ch1')">
                         <h3><span class="chapter-num">Ch 1</span> The Agentic Coding Revolution</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -416,8 +68,8 @@
                 </div>
 
                 <!-- Chapter 2 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch2') }">
+                    <div class="chapter-header" @click="toggleChapter('ch2')">
                         <h3><span class="chapter-num">Ch 2</span> Claude Code vs Cursor: Strategic Comparison</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -459,8 +111,8 @@
                 </div>
 
                 <!-- Chapter 3 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch3') }">
+                    <div class="chapter-header" @click="toggleChapter('ch3')">
                         <h3><span class="chapter-num">Ch 3</span> Installation and Environment Setup</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -502,8 +154,8 @@
                 </div>
 
                 <!-- Chapter 4 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch4') }">
+                    <div class="chapter-header" @click="toggleChapter('ch4')">
                         <h3><span class="chapter-num">Ch 4</span> Claude Code Architecture Deep Dive</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -533,8 +185,8 @@
                 </div>
 
                 <!-- Chapter 5 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch5') }">
+                    <div class="chapter-header" @click="toggleChapter('ch5')">
                         <h3><span class="chapter-num">Ch 5</span> CLAUDE.md: Your Project's Brain</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -585,8 +237,8 @@
                 </div>
 
                 <!-- Chapter 6 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch6') }">
+                    <div class="chapter-header" @click="toggleChapter('ch6')">
                         <h3><span class="chapter-num">Ch 6</span> Permission Modes and Security</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -629,8 +281,8 @@
                 </div>
 
                 <!-- Chapter 7 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch7') }">
+                    <div class="chapter-header" @click="toggleChapter('ch7')">
                         <h3><span class="chapter-num">Ch 7</span> Subagents and Parallel Execution</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -677,8 +329,8 @@
                 </div>
 
                 <!-- Chapter 8 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch8') }">
+                    <div class="chapter-header" @click="toggleChapter('ch8')">
                         <h3><span class="chapter-num">Ch 8</span> Hooks: Automating Your Workflow</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -717,8 +369,8 @@
                 </div>
 
                 <!-- Chapter 9 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch9') }">
+                    <div class="chapter-header" @click="toggleChapter('ch9')">
                         <h3><span class="chapter-num">Ch 9</span> Custom Slash Commands</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -765,8 +417,8 @@
                 </div>
 
                 <!-- Chapter 10 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch10') }">
+                    <div class="chapter-header" @click="toggleChapter('ch10')">
                         <h3><span class="chapter-num">Ch 10</span> Reusable Capability Bundles (Skills)</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -796,8 +448,8 @@
                 </div>
 
                 <!-- Chapter 11 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch11') }">
+                    <div class="chapter-header" @click="toggleChapter('ch11')">
                         <h3><span class="chapter-num">Ch 11</span> Cursor Architecture and Modes</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -856,8 +508,8 @@
                 </div>
 
                 <!-- Chapter 12 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch12') }">
+                    <div class="chapter-header" @click="toggleChapter('ch12')">
                         <h3><span class="chapter-num">Ch 12</span> Rules Files (.cursorrules and .mdc)</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -896,8 +548,8 @@
                 </div>
 
                 <!-- Chapter 13 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch13') }">
+                    <div class="chapter-header" @click="toggleChapter('ch13')">
                         <h3><span class="chapter-num">Ch 13</span> Agent Mode and Composer</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -948,8 +600,8 @@
                 </div>
 
                 <!-- Chapter 14 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch14') }">
+                    <div class="chapter-header" @click="toggleChapter('ch14')">
                         <h3><span class="chapter-num">Ch 14</span> Background and Cloud Agents</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1000,8 +652,8 @@
                 </div>
 
                 <!-- Chapter 15 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch15') }">
+                    <div class="chapter-header" @click="toggleChapter('ch15')">
                         <h3><span class="chapter-num">Ch 15</span> Notepads, Memories, and Context</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1035,8 +687,8 @@
                 </div>
 
                 <!-- Chapter 16 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch16') }">
+                    <div class="chapter-header" @click="toggleChapter('ch16')">
                         <h3><span class="chapter-num">Ch 16</span> MCP: Model Context Protocol</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1083,8 +735,8 @@
                 </div>
 
                 <!-- Chapter 17 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch17') }">
+                    <div class="chapter-header" @click="toggleChapter('ch17')">
                         <h3><span class="chapter-num">Ch 17</span> AGENTS.md: Cross-Tool Instructions</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1119,8 +771,8 @@
                 </div>
 
                 <!-- Chapter 18 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch18') }">
+                    <div class="chapter-header" @click="toggleChapter('ch18')">
                         <h3><span class="chapter-num">Ch 18</span> Memory Bank Pattern</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1150,7 +802,7 @@
                                 </div>
                                 <div class="command-item">
                                     <code class="command-code">memory-bank/decisionLog.md</code>
-                                    <span class="command-desc">Key decisions & rationale</span>
+                                    <span class="command-desc">Key decisions &amp; rationale</span>
                                 </div>
                             </div>
                         </div>
@@ -1158,8 +810,8 @@
                 </div>
 
                 <!-- Chapter 19 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch19') }">
+                    <div class="chapter-header" @click="toggleChapter('ch19')">
                         <h3><span class="chapter-num">Ch 19</span> Context Window Management</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1198,8 +850,8 @@
                 </div>
 
                 <!-- Chapter 20 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch20') }">
+                    <div class="chapter-header" @click="toggleChapter('ch20')">
                         <h3><span class="chapter-num">Ch 20</span> Model Selection Strategy</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1228,7 +880,7 @@
                                     <td>Opus 4.6</td>
                                 </tr>
                                 <tr>
-                                    <td>Very long context (>150K)</td>
+                                    <td>Very long context (&gt;150K)</td>
                                     <td>Gemini 3.1 Pro</td>
                                 </tr>
                             </table>
@@ -1245,8 +897,8 @@
                 </div>
 
                 <!-- Chapter 21 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch21') }">
+                    <div class="chapter-header" @click="toggleChapter('ch21')">
                         <h3><span class="chapter-num">Ch 21</span> GitHub Integration</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1276,8 +928,8 @@
                 </div>
 
                 <!-- Chapter 23 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch23') }">
+                    <div class="chapter-header" @click="toggleChapter('ch23')">
                         <h3><span class="chapter-num">Ch 23</span> Automated Testing and QA</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1303,8 +955,8 @@
                 </div>
 
                 <!-- Chapter 25 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch25') }">
+                    <div class="chapter-header" @click="toggleChapter('ch25')">
                         <h3><span class="chapter-num">Ch 25</span> The Ticket-to-Merge Pipeline</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1350,8 +1002,8 @@
                 </div>
 
                 <!-- Chapter 26 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch26') }">
+                    <div class="chapter-header" @click="toggleChapter('ch26')">
                         <h3><span class="chapter-num">Ch 26</span> Prompt Engineering for Agents</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1398,8 +1050,8 @@
                 </div>
 
                 <!-- Chapter 28 -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ch28') }">
+                    <div class="chapter-header" @click="toggleChapter('ch28')">
                         <h3><span class="chapter-num">Ch 28</span> Debugging AI-Generated Code</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1437,8 +1089,8 @@
                 </div>
 
                 <!-- Essential Files -->
-                <div class="chapter-card open">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ref-files') }">
+                    <div class="chapter-header" @click="toggleChapter('ref-files')">
                         <h3>📁 Essential Files Quick Reference</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1502,8 +1154,8 @@
                 </div>
 
                 <!-- All Commands -->
-                <div class="chapter-card">
-                    <div class="chapter-header" onclick="toggleChapter(this)">
+                <div class="chapter-card" :class="{ open: openChapters.has('ref-commands') }">
+                    <div class="chapter-header" @click="toggleChapter('ref-commands')">
                         <h3>⌨️ All Commands Quick Reference</h3>
                         <span class="chapter-toggle">▼</span>
                     </div>
@@ -1582,64 +1234,359 @@
     </main>
 
     <!-- Print Button -->
-    <button class="print-btn" onclick="window.print()">
+    <button class="print-btn" @click="printPage">
         🖨️ Print Cheat Sheet
     </button>
+</template>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span class="logo-icon">🏗️</span>
-                        <span class="logo-text">Augmented Architect</span>
-                    </div>
-                    <p>The definitive guide to AI-augmented development.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Book</h4>
-                        <a href="/#features">What's Inside</a>
-                        <a href="/#journey">Your Journey</a>
-                        <a href="/#buy">Buy Now</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Resources</h4>
-                        <a href="/snippets">Code Snippets</a>
-                        <a href="/cheatsheet">Cheat Sheet</a>
-                        <a href="/resources">Videos & Changelog</a>
-                        <a href="/errata">Errata</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <a href="https://5starstechnology.com" target="_blank">5 Stars Technology</a>
-                        <a href="mailto:klaus@barkhausen.us">Contact</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Klaus Barkhausen. All rights reserved.</p>
-                <p>Published by 5 Stars Technology</p>
-            </div>
-        </div>
-    </footer>
+<script setup>
+import { reactive, onMounted, onUnmounted } from 'vue'
 
-    <script>
-        function toggleChapter(header) {
-            const card = header.closest('.chapter-card');
-            card.classList.toggle('open');
-        }
-        
-        // Open all chapters for print
-        window.addEventListener('beforeprint', () => {
-            document.querySelectorAll('.chapter-card').forEach(card => {
-                card.classList.add('open');
-            });
-        });
-    </script>
-    <script src="/js/main.js"></script>
-</body>
-</html>
+const openChapters = reactive(new Set(['ch1', 'ref-files']))
+
+function toggleChapter(id) {
+    if (openChapters.has(id)) {
+        openChapters.delete(id)
+    } else {
+        openChapters.add(id)
+    }
+}
+
+function printPage() {
+    window.print()
+}
+
+function handleBeforePrint() {
+    const allIds = [
+        'ch1', 'ch2', 'ch3', 'ch4', 'ch5', 'ch6', 'ch7', 'ch8', 'ch9', 'ch10',
+        'ch11', 'ch12', 'ch13', 'ch14', 'ch15',
+        'ch16', 'ch17', 'ch18', 'ch19', 'ch20',
+        'ch21', 'ch23', 'ch25',
+        'ch26', 'ch28',
+        'ref-files', 'ref-commands'
+    ]
+    allIds.forEach(id => openChapters.add(id))
+}
+
+onMounted(() => {
+    window.addEventListener('beforeprint', handleBeforePrint)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('beforeprint', handleBeforePrint)
+})
+</script>
+
+<style scoped>
+.cheatsheet-hero {
+    padding: 160px 0 40px;
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+}
+
+.cheatsheet-hero h1 {
+    margin-bottom: var(--space-md);
+}
+
+.cheatsheet-nav {
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-lg) 0;
+    position: sticky;
+    top: 60px;
+    z-index: 100;
+    overflow-x: auto;
+}
+
+.cheatsheet-nav-inner {
+    display: flex;
+    gap: var(--space-sm);
+    padding: 0 var(--space-lg);
+    min-width: max-content;
+}
+
+.cheatsheet-nav a {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.cheatsheet-nav a:hover {
+    border-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+.cheatsheet-content {
+    padding: var(--space-3xl) 0;
+}
+
+.part-section {
+    margin-bottom: var(--space-4xl);
+}
+
+.part-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.part-icon {
+    font-size: 2rem;
+}
+
+.part-header h2 {
+    font-size: 1.5rem;
+}
+
+.chapter-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-xl);
+    overflow: hidden;
+}
+
+.chapter-header {
+    padding: var(--space-lg);
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chapter-header:hover {
+    background: var(--color-bg-hover);
+}
+
+.chapter-header h3 {
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.chapter-num {
+    color: var(--color-primary-light);
+    font-weight: 400;
+}
+
+.chapter-toggle {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-fast);
+}
+
+.chapter-card.open .chapter-toggle {
+    transform: rotate(180deg);
+}
+
+.chapter-content {
+    padding: var(--space-xl);
+    display: none;
+}
+
+.chapter-card.open .chapter-content {
+    display: block;
+}
+
+.cheat-section {
+    margin-bottom: var(--space-xl);
+}
+
+.cheat-section:last-child {
+    margin-bottom: 0;
+}
+
+.cheat-section h4 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary-light);
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.command-grid {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.command-item {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-md);
+    align-items: flex-start;
+}
+
+.command-code {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-secondary);
+    background: var(--color-bg);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.command-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.tip-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.tip-item {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-accent);
+}
+
+.tip-icon {
+    flex-shrink: 0;
+}
+
+.tip-text {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.tip-text strong {
+    color: var(--color-text);
+}
+
+.key-point {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-md);
+}
+
+.key-point-icon {
+    color: var(--color-primary-light);
+    flex-shrink: 0;
+}
+
+.key-point-text {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.file-ref {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-primary-light);
+    background: var(--color-bg);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+.quick-ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.quick-ref-table th {
+    text-align: left;
+    padding: var(--space-md);
+    background: var(--color-bg-elevated);
+    color: var(--color-text);
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.quick-ref-table td {
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+}
+
+.quick-ref-table code {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-secondary);
+    background: var(--color-bg);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+.print-btn {
+    position: fixed;
+    bottom: var(--space-xl);
+    right: var(--space-xl);
+    padding: var(--space-md) var(--space-xl);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.print-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+@media print {
+    .cheatsheet-nav, .print-btn {
+        display: none !important;
+    }
+
+    .cheatsheet-hero {
+        padding-top: 0;
+    }
+
+    .chapter-card {
+        break-inside: avoid;
+    }
+
+    .chapter-content {
+        display: block !important;
+    }
+
+    .chapter-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .command-item {
+        flex-direction: column;
+    }
+
+    .print-btn {
+        bottom: var(--space-md);
+        right: var(--space-md);
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.875rem;
+    }
+}
+</style>

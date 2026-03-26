@@ -1,6 +1,6 @@
 # augmented-architect.ai
 
-Official website for **"The AI-Augmented Architect"** book by Klaus Barkhausen.
+Official website for **"The AI Augmented Architect"** book by Klaus Barkhausen.
 
 ## About the Book
 
@@ -9,57 +9,94 @@ The definitive guide to mastering Claude Code and Cursor for AI-augmented softwa
 - 34 comprehensive chapters
 - 9,000+ lines of content
 - 100+ code examples
-- Covers latest March 2026 features
+- Covers latest April 2026 features
 
-## Deployment
+## Tech Stack
 
-This site is designed for **Cloudflare Pages** deployment.
+- **Vue.js 3** with Composition API (`<script setup>`)
+- **Vue Router** for client-side routing
+- **Vite** for build tooling and dev server
 
-### Setup
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+The dev server starts at `http://localhost:5173`.
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+Output goes to the `dist/` folder.
+
+## Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Deployment (Cloudflare Pages)
 
 1. Connect this repository to Cloudflare Pages
 2. Set build settings:
-   - Build command: (none - static site)
-   - Build output directory: `/`
+   - **Build command:** `npm run build`
+   - **Build output directory:** `dist`
 3. Add custom domain: `augmented-architect.ai`
 
-### Local Development
-
-Simply open `index.html` in a browser, or use a local server:
-
-```bash
-npx serve .
-```
-
-## Structure
+## Project Structure
 
 ```
-├── index.html          # Main landing page
-├── resources.html      # Code samples, videos, changelog
-├── errata.html         # Book corrections
-├── css/
-│   └── styles.css      # All styles
-├── js/
-│   └── main.js         # Interactive features
-├── _headers            # Cloudflare security headers
-├── _redirects          # URL redirects
-└── favicon.svg         # Site icon
+├── index.html                  # SPA entry point
+├── package.json                # Dependencies and scripts
+├── vite.config.js              # Vite configuration
+├── public/
+│   ├── favicon.svg             # Site icon
+│   └── images/                 # Static images (logo, book cover, author photo)
+├── src/
+│   ├── main.js                 # App entry — mounts Vue + router
+│   ├── App.vue                 # Root component (NavBar + router-view + Footer)
+│   ├── router.js               # Vue Router routes
+│   ├── assets/
+│   │   └── styles.css          # Global stylesheet
+│   ├── components/
+│   │   ├── NavBar.vue          # Shared navigation bar
+│   │   └── SiteFooter.vue      # Shared footer
+│   └── pages/
+│       ├── HomePage.vue        # Landing page
+│       ├── FeaturesPage.vue    # What's Inside
+│       ├── JourneyPage.vue     # Your Journey
+│       ├── SnippetsPage.vue    # Code Snippets browser
+│       ├── CheatsheetPage.vue  # Quick Reference Cheat Sheet
+│       ├── ResourcesPage.vue   # Videos & Changelog
+│       ├── AuthorPage.vue      # About the Author
+│       ├── BuyPage.vue         # Get the Book
+│       └── ErrataPage.vue      # Errata
 ```
 
-## Features
+## Routes
 
-- Responsive design (mobile-first)
-- Dark theme
-- Smooth scroll navigation
-- Copy-to-clipboard code samples
-- Newsletter signup (placeholder)
-- Amazon buy links (placeholder - update when published)
+| Path | Page |
+|------|------|
+| `/` | Home |
+| `/features` | What's Inside |
+| `/journey` | Your Journey |
+| `/snippets` | Code Snippets |
+| `/cheatsheet` | Cheat Sheet |
+| `/resources` | Resources |
+| `/author` | About the Author |
+| `/buy` | Get the Book |
+| `/errata` | Errata |
 
 ## Updating
 
 ### Amazon Links
 
-When the book is published on Amazon, update the buy buttons in `index.html`:
+When the book is published on Amazon, update the buy buttons in `src/pages/BuyPage.vue`:
 
 ```html
 <a href="https://amazon.com/dp/YOUR-ASIN" class="btn btn-primary btn-lg buy-btn">
@@ -69,11 +106,11 @@ When the book is published on Amazon, update the buy buttons in `index.html`:
 
 ### Adding Errata
 
-Update `errata.html` with the errata table (example provided in comments).
+Update `src/pages/ErrataPage.vue` with the errata table (example provided in comments).
 
 ### Adding Changelog Items
 
-Add new items to the changelog section in `resources.html`.
+Add new items to the changelog section in `src/pages/ResourcesPage.vue`.
 
 ## License
 

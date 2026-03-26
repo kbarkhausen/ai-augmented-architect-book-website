@@ -240,6 +240,12 @@ section {
     font-size: 1.5rem;
 }
 
+.logo-img {
+    height: 32px;
+    width: auto;
+    border-radius: 4px;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -398,99 +404,19 @@ section {
     perspective: 1000px;
 }
 
-.book-mockup {
-    transform: rotateY(-15deg) rotateX(5deg);
+.hero-book-cover {
+    max-width: 340px;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow:
+        var(--shadow-xl),
+        -20px 20px 60px rgba(0, 0, 0, 0.5);
     transition: transform var(--transition-slow);
 }
 
-.book-mockup:hover {
+.hero-book-cover:hover {
     transform: rotateY(-5deg) rotateX(2deg);
-}
-
-.book-cover {
-    position: relative;
-    width: 300px;
-    height: 420px;
-}
-
-.book-front {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
-    border-radius: var(--radius-md);
-    box-shadow: 
-        var(--shadow-xl),
-        -20px 20px 60px rgba(0, 0, 0, 0.5),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-}
-
-.book-front::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, transparent 40%, rgba(99, 102, 241, 0.2) 100%);
-}
-
-.book-spine {
-    position: absolute;
-    left: -15px;
-    top: 0;
-    width: 15px;
-    height: 100%;
-    background: linear-gradient(90deg, #0a0a15 0%, #1a1a2e 100%);
-    transform: rotateY(90deg);
-    transform-origin: right;
-    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
-}
-
-.cover-content {
-    position: relative;
-    z-index: 1;
-    padding: var(--space-2xl);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.cover-badge {
-    display: inline-block;
-    padding: var(--space-xs) var(--space-sm);
-    background: var(--gradient-primary);
-    border-radius: var(--radius-sm);
-    font-size: 0.625rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: auto;
-    align-self: flex-start;
-}
-
-.cover-content h2 {
-    font-size: 1.5rem;
-    line-height: 1.2;
-    margin-bottom: var(--space-sm);
-}
-
-.cover-content p {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-lg);
-}
-
-.cover-tools {
-    display: flex;
-    gap: var(--space-sm);
-    font-size: 0.75rem;
-    color: var(--color-primary-light);
-    margin-bottom: auto;
-}
-
-.cover-author {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
 }
 
 /* Hero scroll indicator */
