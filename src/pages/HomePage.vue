@@ -19,9 +19,6 @@
           </div>
         </div>
       </div>
-      <div class="hero-visual">
-        <img src="/images/book-cover.png" alt="The AI-Augmented Architect book cover" class="hero-book-cover">
-      </div>
     </div>
   </header>
 
@@ -113,11 +110,25 @@ import { audiences, siteMeta } from '../data/siteContent'
 </script>
 
 <style scoped>
+.hero {
+  min-height: auto;
+  align-items: flex-start;
+  padding-top: 112px;
+  padding-bottom: var(--space-4xl);
+}
+
+.hero-content {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: var(--space-xl);
+  text-align: center;
+}
+
 .hero-emblem {
-  width: min(220px, 48vw);
+  width: min(320px, 62vw);
   height: auto;
   display: block;
-  margin-bottom: var(--space-lg);
+  margin: 0 auto var(--space-xl);
   border-radius: var(--radius-xl);
   opacity: 0.94;
   filter: brightness(1.06) contrast(1.02);
@@ -127,14 +138,17 @@ import { audiences, siteMeta } from '../data/siteContent'
 .hero-text {
   position: relative;
   z-index: 1;
+  max-width: 860px;
+  text-align: center;
 }
 
 .hero-text::before {
   content: '';
   position: absolute;
-  top: 8px;
-  left: 8px;
-  width: min(220px, 48vw);
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(320px, 62vw);
   aspect-ratio: 1;
   background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, rgba(99, 102, 241, 0.07) 42%, transparent 72%);
   filter: blur(26px);
@@ -145,6 +159,17 @@ import { audiences, siteMeta } from '../data/siteContent'
 .hero-text > * {
   position: relative;
   z-index: 1;
+}
+
+.hero-description {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta,
+.hero-stats {
+  justify-content: center;
 }
 
 .positioning {
@@ -234,11 +259,6 @@ import { audiences, siteMeta } from '../data/siteContent'
   .cta-strip-inner {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .hero-emblem {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 </style>
