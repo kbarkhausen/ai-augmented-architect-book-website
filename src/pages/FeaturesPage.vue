@@ -8,6 +8,9 @@
 
   <section class="book-summary">
     <div class="container">
+      <div class="book-cover-wrap">
+        <img src="/images/book-page-cover.jpg" alt="The AI-Augmented Architect book cover" class="book-page-cover">
+      </div>
       <div class="summary-shell">
         <div class="summary-card">
           <h2>What readers get</h2>
@@ -109,6 +112,19 @@ import { bookParts } from '../data/siteContent'
 
 .book-summary {
   padding-top: 0;
+}
+
+.book-cover-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.book-page-cover {
+  width: min(320px, 100%);
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl), 0 12px 36px rgba(0, 0, 0, 0.35);
 }
 
 .summary-shell,
