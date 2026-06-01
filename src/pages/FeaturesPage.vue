@@ -10,7 +10,7 @@
     <div class="container">
       <div class="book-cover-wrap">
         <div class="book-render-stage">
-          <img src="/images/book-page-render.png" alt="The AI-Augmented Architect book render" class="book-page-cover">
+          <img src="/images/book-page-render.jpg" alt="The AI-Augmented Architect book render" class="book-page-cover">
         </div>
       </div>
       <div class="summary-shell">
