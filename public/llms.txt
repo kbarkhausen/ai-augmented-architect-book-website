@@ -1,0 +1,39 @@
+# The AI-Augmented Architect
+
+The AI-Augmented Architect is a book and companion website by Klaus Barkhausen.
+
+This site is designed for architects, technology leaders, and program managers who need practical guidance for AI-augmented software delivery, legacy modernization, governance, verification, observability, and enterprise architecture.
+
+## Main pages
+- / : site overview and positioning
+- /book : book overview and table of contents
+- /companion : chapter-to-resource map
+- /examples : architecture examples and reference artifacts
+- /worksheets : reusable worksheets and forms
+- /labs : team exercises and workshop labs
+- /author : author profile
+- /buy : launch and book inquiry page
+- /errata : corrections and clarifications
+
+## Topics covered
+- AI-augmented architecture
+- delegation and verification
+- system boundaries and contracts
+- observability and operability
+- security, privacy, and compliance
+- failure modes and technical debt
+- legacy modernization
+- build, buy, or modernize decisions
+- governance, adoption, and economics
+
+## Companion resources
+This site includes practical companion material aligned to the book:
+- examples
+- worksheets
+- forms
+- labs
+- errata and clarifications
+
+## Author
+Klaus Barkhausen
+https://klausbarkhausen.com

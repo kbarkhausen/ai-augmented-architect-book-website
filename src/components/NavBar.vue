@@ -2,7 +2,7 @@
   <nav class="nav" :class="{ scrolled }">
     <div class="nav-container">
       <router-link to="/" class="nav-logo">
-        <img src="/images/book-logo.png" alt="Logo" class="logo-img">
+        <img src="/images/site-logo.jpg" alt="The AI-Augmented Architect logo" class="logo-img">
         <span class="logo-text">AI-Augmented Architect</span>
       </router-link>
       <div class="nav-links" :class="{ active: menuOpen }">

@@ -18,6 +18,18 @@ This site now serves two jobs at once:
    - Provides labs for workshops and internal planning sessions
    - Tracks errata and future companion materials
 
+## SEO and AI cataloging
+
+The site now includes:
+
+- route-aware page titles and descriptions
+- Open Graph and Twitter metadata
+- schema.org JSON-LD for the website, book, and author
+- `robots.txt`
+- `sitemap.xml`
+- `llms.txt` for AI-oriented cataloging and summarization
+- semantic, topic-rich copy aligned to the book's structure
+
 ## Content structure
 
 The site is organized around the new manuscript structure:

@@ -4,7 +4,7 @@
       <div class="footer-content">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="/images/book-logo.png" alt="Logo" class="logo-img">
+            <img src="/images/site-logo.jpg" alt="The AI-Augmented Architect logo" class="logo-img">
             <span class="logo-text">The AI-Augmented Architect</span>
           </div>
           <p>A companion website for the book, with examples, worksheets, forms, labs, and launch updates.</p>

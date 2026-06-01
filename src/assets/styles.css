@@ -241,9 +241,12 @@ section {
 }
 
 .logo-img {
-    height: 32px;
-    width: auto;
-    border-radius: 4px;
+    height: 36px;
+    width: 36px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 1px solid rgba(99, 102, 241, 0.25);
 }
 
 .nav-links {
