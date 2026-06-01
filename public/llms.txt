@@ -2,6 +2,8 @@
 
 The AI-Augmented Architect is a book and companion website by Klaus Barkhausen.
 
+Planned book release: June 2026.
+
 This site is designed for architects, technology leaders, and program managers who need practical guidance for AI-augmented software delivery, legacy modernization, governance, verification, observability, and enterprise architecture.
 
 ## Main pages

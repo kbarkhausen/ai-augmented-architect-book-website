@@ -3,7 +3,7 @@
     <div class="hero-bg"></div>
     <div class="container hero-content">
       <div class="hero-text">
-        <div class="hero-badge">📘 Companion site + launch platform</div>
+        <div class="hero-badge">📘 June 2026 release • Companion site + launch platform</div>
         <h1>{{ siteMeta.heroTitle }}</h1>
         <p class="hero-subtitle">Architecture for the age of AI-augmented delivery</p>
         <p class="hero-description">{{ siteMeta.heroDescription }}</p>

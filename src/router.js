@@ -89,7 +89,7 @@ const routes = [
     meta: {
       title: 'Get the Book | The AI-Augmented Architect',
       description:
-        'Learn how The AI-Augmented Architect is positioned, why it stands out, and how to request launch updates, review copies, or workshop information.',
+        'Learn how The AI-Augmented Architect is positioned for its June 2026 release, why it stands out, and how to request launch updates, review copies, or workshop information.',
     },
   },
   {

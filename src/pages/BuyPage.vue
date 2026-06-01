@@ -2,7 +2,7 @@
   <header class="buy-hero">
     <div class="container">
       <h1>Get the Book</h1>
-      <p>The AI-Augmented Architect is positioned as both a serious architecture book and a practical companion experience.</p>
+      <p>The AI-Augmented Architect is planned for release in June 2026, positioned as both a serious architecture book and a practical companion experience.</p>
     </div>
   </header>
 
@@ -17,9 +17,9 @@
       </div>
 
       <div class="buy-card">
-        <h2>Launch interest</h2>
+        <h2>June 2026 release</h2>
         <p>
-          The website is being positioned now so it can market the book, support the launch,
+          The website is being positioned now so it can market the June 2026 release, support the launch,
           and continue serving readers after purchase with practical resources.
         </p>
         <div class="buy-actions">
@@ -30,7 +30,7 @@
             Ask about review copies or workshops
           </a>
         </div>
-        <p class="buy-note">Once retail links are live, this page can be updated with Amazon, direct sales, and print options.</p>
+        <p class="buy-note">Once retail links are live, this page can be updated with Amazon, direct sales, and print options for the June 2026 release.</p>
       </div>
     </div>
   </section>
