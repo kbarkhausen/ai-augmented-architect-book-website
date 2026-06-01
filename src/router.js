@@ -11,17 +11,18 @@ import BuyPage from './pages/BuyPage.vue'
 import ErrataPage from './pages/ErrataPage.vue'
 
 const SITE_URL = 'https://augmented-architect.ai'
-const DEFAULT_TITLE = 'The AI-Augmented Architect | Companion site for architecture, modernization, and AI delivery'
-const DEFAULT_DESCRIPTION = 'The AI-Augmented Architect is a book and companion site for architects, technology leaders, and program managers working on AI-augmented delivery, legacy modernization, governance, and enterprise software design.'
+const SHOW_COMPANION_CONTENT = false
+const DEFAULT_TITLE = 'The AI-Augmented Architect | Official book website for architecture, modernization, and AI delivery'
+const DEFAULT_DESCRIPTION = 'The AI-Augmented Architect is the official book website for architects, technology leaders, and program managers working on AI-augmented delivery, legacy modernization, governance, and enterprise software design.'
 
 const routes = [
   {
     path: '/',
     component: HomePage,
     meta: {
-      title: 'The AI-Augmented Architect | Book companion, worksheets, examples, and labs',
+      title: 'The AI-Augmented Architect | Official book website',
       description:
-        'Explore The AI-Augmented Architect, a practical architecture book and companion site with examples, worksheets, forms, labs, and guidance for AI-augmented delivery.',
+        'Explore The AI-Augmented Architect, a practical architecture book for architects, technology leaders, and program managers navigating AI-augmented delivery and modernization.',
     },
   },
   {
@@ -37,7 +38,8 @@ const routes = [
   {
     path: '/companion',
     alias: '/journey',
-    component: JourneyPage,
+    component: SHOW_COMPANION_CONTENT ? JourneyPage : FeaturesPage,
+    redirect: SHOW_COMPANION_CONTENT ? undefined : '/book',
     meta: {
       title: 'The Companion | The AI-Augmented Architect',
       description:
@@ -47,7 +49,8 @@ const routes = [
   {
     path: '/examples',
     alias: '/snippets',
-    component: SnippetsPage,
+    component: SHOW_COMPANION_CONTENT ? SnippetsPage : FeaturesPage,
+    redirect: SHOW_COMPANION_CONTENT ? undefined : '/book',
     meta: {
       title: 'Examples | The AI-Augmented Architect',
       description:
@@ -57,7 +60,8 @@ const routes = [
   {
     path: '/worksheets',
     alias: '/cheatsheet',
-    component: CheatsheetPage,
+    component: SHOW_COMPANION_CONTENT ? CheatsheetPage : FeaturesPage,
+    redirect: SHOW_COMPANION_CONTENT ? undefined : '/book',
     meta: {
       title: 'Worksheets and Forms | The AI-Augmented Architect',
       description:
@@ -67,7 +71,8 @@ const routes = [
   {
     path: '/labs',
     alias: '/resources',
-    component: ResourcesPage,
+    component: SHOW_COMPANION_CONTENT ? ResourcesPage : FeaturesPage,
+    redirect: SHOW_COMPANION_CONTENT ? undefined : '/book',
     meta: {
       title: 'Labs | The AI-Augmented Architect',
       description:

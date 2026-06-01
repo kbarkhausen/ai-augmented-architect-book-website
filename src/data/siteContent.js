@@ -441,6 +441,6 @@ export const companionMap = [
 export const buyPagePoints = [
   'A durable framework instead of tool-churn commentary',
   'A full enterprise case study that runs through the book',
-  'Companion examples, worksheets, forms, and labs on this site',
+  'Clear positioning for architects, technology leaders, and program managers',
   'Practical guidance for architects, executives, and program leaders',
 ]

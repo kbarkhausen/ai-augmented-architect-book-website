@@ -2,7 +2,7 @@
   <header class="buy-hero">
     <div class="container">
       <h1>Get the Book</h1>
-      <p>The AI-Augmented Architect is planned for release in June 2026, positioned as both a serious architecture book and a practical companion experience.</p>
+      <p>The AI-Augmented Architect is planned for release in June 2026, positioned as a serious architecture book for leaders navigating AI-driven software change.</p>
     </div>
   </header>
 
@@ -47,11 +47,11 @@
         </article>
         <article class="path-card">
           <h3>During evaluation</h3>
-          <p>Examples, worksheets, and labs show that the book is grounded in real architecture work, not buzzwords.</p>
+          <p>The table of contents, framing, and positioning show that the book is grounded in real architecture work, not buzzwords.</p>
         </article>
         <article class="path-card">
           <h3>After purchase</h3>
-          <p>The companion materials keep the site useful, which makes the book more referable and easier to recommend inside organizations.</p>
+          <p>The site can continue to support the release with links, updates, errata, and future book-related material.</p>
         </article>
       </div>
     </div>

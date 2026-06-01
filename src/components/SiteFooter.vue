@@ -7,7 +7,7 @@
             <img src="/images/site-logo.jpg" alt="The AI-Augmented Architect logo" class="logo-img">
             <span class="logo-text">The AI-Augmented Architect</span>
           </div>
-          <p>A companion website for the book, with examples, worksheets, forms, labs, and launch updates.</p>
+          <p>The official website for the book, with launch details, book information, and release updates.</p>
         </div>
 
         <div class="footer-links">
@@ -18,11 +18,10 @@
             <router-link to="/errata">Errata</router-link>
           </div>
           <div class="footer-column">
-            <h4>Companion</h4>
-            <router-link to="/companion">How to use this site</router-link>
-            <router-link to="/examples">Examples</router-link>
-            <router-link to="/worksheets">Worksheets</router-link>
-            <router-link to="/labs">Labs</router-link>
+            <h4>Explore</h4>
+            <router-link to="/">Home</router-link>
+            <router-link to="/author">About Klaus</router-link>
+            <router-link to="/buy">June 2026 release</router-link>
           </div>
           <div class="footer-column">
             <h4>Connect</h4>

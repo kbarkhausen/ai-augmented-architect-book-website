@@ -4,13 +4,13 @@
     <div class="container hero-content">
       <div class="hero-text">
         <img src="/images/homepage-emblem-dark.jpg" alt="The AI-Augmented Architect emblem" class="hero-emblem">
-        <div class="hero-badge">📘 June 2026 release • Companion site + launch platform</div>
+        <div class="hero-badge">📘 June 2026 release • Official book website</div>
         <h1>{{ siteMeta.heroTitle }}</h1>
         <p class="hero-subtitle">Architecture for the age of AI-augmented delivery</p>
         <p class="hero-description">{{ siteMeta.heroDescription }}</p>
         <div class="hero-cta">
           <router-link to="/buy" class="btn btn-primary btn-lg">Get the Book</router-link>
-          <router-link to="/companion" class="btn btn-secondary btn-lg">Explore the Companion</router-link>
+          <router-link to="/book" class="btn btn-secondary btn-lg">See What's Inside</router-link>
         </div>
         <div class="hero-stats">
           <div v-for="stat in siteMeta.stats" :key="stat.label" class="stat">
@@ -49,23 +49,6 @@
     </div>
   </section>
 
-  <section class="resources">
-    <div class="container">
-      <div class="section-header">
-        <h2>The companion toolkit</h2>
-        <p>This site extends the book with artifacts you can use in your own organization.</p>
-      </div>
-      <div class="resources-grid">
-        <article v-for="card in companionCards" :key="card.title" class="resource-card">
-          <div class="resource-icon">{{ card.icon }}</div>
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.description }}</p>
-          <router-link :to="card.link" class="resource-link">{{ card.cta }} →</router-link>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="audience-home">
     <div class="container">
       <div class="section-header">
@@ -91,7 +74,7 @@
           legacy systems, batch integrations, and an executive mandate to “adopt AI.”
         </p>
         <p>
-          That case study is how the book stays practical. Instead of random examples, the companion materials help you apply the same decisions to your own estate.
+          That case study is how the book stays practical. It keeps the argument grounded in a real estate of systems, trade-offs, and modernization decisions.
         </p>
       </div>
       <div class="case-study-points">
@@ -114,19 +97,19 @@
   <section class="cta-strip">
     <div class="container cta-strip-inner">
       <div>
-        <h2>Use the book as a workbook, not just a read</h2>
-        <p>Start with the chapter map, then move straight into the companion pages for examples, worksheets, and labs.</p>
+        <h2>Start with the book's structure and promise</h2>
+        <p>Use the site to understand what the book covers, who it is for, and why the release matters.</p>
       </div>
       <div class="hero-cta">
         <router-link to="/book" class="btn btn-primary">See the chapter map</router-link>
-        <router-link to="/worksheets" class="btn btn-secondary">Open the worksheets</router-link>
+        <router-link to="/buy" class="btn btn-secondary">View release details</router-link>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { audiences, companionCards, siteMeta } from '../data/siteContent'
+import { audiences, siteMeta } from '../data/siteContent'
 </script>
 
 <style scoped>

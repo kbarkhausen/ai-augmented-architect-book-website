@@ -22,7 +22,7 @@
             <li>A durable framework for architecting with AI agents without becoming tool-dependent</li>
             <li>A full enterprise modernization narrative built around Meridian Logistics Group</li>
             <li>Guidance for delegation, trust, legacy modernization, governance, and economics</li>
-            <li>Companion materials on this site that help teams apply the ideas directly</li>
+            <li>A clear view of what the book covers, who it is for, and why the topic matters now</li>
           </ul>
         </div>
         <div class="summary-card accent">
@@ -88,10 +88,10 @@
   <section class="chapter-cta">
     <div class="container chapter-cta-shell">
       <div>
-        <h2>Read the book, then use the companion immediately</h2>
-        <p>Each part has matching examples, worksheets, or labs so the ideas can turn into decisions inside your organization.</p>
+        <h2>See the full scope of the book before release</h2>
+        <p>Use the site to understand the argument, the audience, and the structure before the June 2026 launch.</p>
       </div>
-      <router-link to="/companion" class="btn btn-primary">Open the companion map</router-link>
+      <router-link to="/buy" class="btn btn-primary">Get release details</router-link>
     </div>
   </section>
 </template>

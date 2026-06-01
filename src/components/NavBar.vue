@@ -7,10 +7,6 @@
       </router-link>
       <div class="nav-links" :class="{ active: menuOpen }">
         <router-link to="/book" @click="closeMenu">Book</router-link>
-        <router-link to="/companion" @click="closeMenu">Companion</router-link>
-        <router-link to="/examples" @click="closeMenu">Examples</router-link>
-        <router-link to="/worksheets" @click="closeMenu">Worksheets</router-link>
-        <router-link to="/labs" @click="closeMenu">Labs</router-link>
         <router-link to="/author" @click="closeMenu">Author</router-link>
         <router-link to="/buy" class="nav-cta" @click="closeMenu">Get the Book</router-link>
       </div>
