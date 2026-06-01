@@ -9,7 +9,9 @@
   <section class="book-summary">
     <div class="container">
       <div class="book-cover-wrap">
-        <img src="/images/book-page-cover.jpg" alt="The AI-Augmented Architect book cover" class="book-page-cover">
+        <div class="book-render-stage">
+          <img src="/images/book-page-render.png" alt="The AI-Augmented Architect book render" class="book-page-cover">
+        </div>
       </div>
       <div class="summary-shell">
         <div class="summary-card">
@@ -120,11 +122,28 @@ import { bookParts } from '../data/siteContent'
   margin-bottom: var(--space-2xl);
 }
 
+.book-render-stage {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-lg);
+}
+
+.book-render-stage::before {
+  content: '';
+  position: absolute;
+  inset: 8% 10%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.12) 28%, rgba(99, 102, 241, 0.14) 52%, transparent 74%);
+  filter: blur(34px);
+  pointer-events: none;
+}
+
 .book-page-cover {
-  width: min(320px, 100%);
+  position: relative;
+  width: min(760px, 100%);
   height: auto;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xl), 0 12px 36px rgba(0, 0, 0, 0.35);
+  filter: drop-shadow(0 26px 54px rgba(0, 0, 0, 0.42));
 }
 
 .summary-shell,
