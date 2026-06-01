@@ -5,29 +5,29 @@
         <div class="footer-brand">
           <div class="footer-logo">
             <img src="/images/book-logo.png" alt="Logo" class="logo-img">
-            <span class="logo-text">AI Augmented Architect</span>
+            <span class="logo-text">The AI-Augmented Architect</span>
           </div>
-          <p>The definitive guide to AI-augmented development.</p>
+          <p>A companion website for the book, with examples, worksheets, forms, labs, and launch updates.</p>
         </div>
 
         <div class="footer-links">
           <div class="footer-column">
             <h4>Book</h4>
-            <router-link to="/features">What's Inside</router-link>
-            <router-link to="/journey">Your Journey</router-link>
-            <router-link to="/buy">Buy Now</router-link>
-          </div>
-          <div class="footer-column">
-            <h4>Resources</h4>
-            <router-link to="/snippets">Code Snippets</router-link>
-            <router-link to="/cheatsheet">Cheat Sheet</router-link>
-            <router-link to="/resources">Videos &amp; Changelog</router-link>
-            <a href="https://github.com/kbarkhausen/augmented-architect-book" target="_blank">GitHub Repo</a>
+            <router-link to="/book">Book overview</router-link>
+            <router-link to="/buy">Get the book</router-link>
             <router-link to="/errata">Errata</router-link>
           </div>
           <div class="footer-column">
+            <h4>Companion</h4>
+            <router-link to="/companion">How to use this site</router-link>
+            <router-link to="/examples">Examples</router-link>
+            <router-link to="/worksheets">Worksheets</router-link>
+            <router-link to="/labs">Labs</router-link>
+          </div>
+          <div class="footer-column">
             <h4>Connect</h4>
-            <a href="mailto:klaus@barkhausen.us">Contact</a>
+            <router-link to="/author">About Klaus</router-link>
+            <a href="mailto:klaus@barkhausen.us?subject=The%20AI-Augmented%20Architect">Contact</a>
           </div>
         </div>
       </div>

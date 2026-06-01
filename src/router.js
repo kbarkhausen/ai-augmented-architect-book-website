@@ -12,11 +12,11 @@ import ErrataPage from './pages/ErrataPage.vue'
 
 const routes = [
   { path: '/', component: HomePage },
-  { path: '/features', component: FeaturesPage },
-  { path: '/journey', component: JourneyPage },
-  { path: '/snippets', component: SnippetsPage },
-  { path: '/cheatsheet', component: CheatsheetPage },
-  { path: '/resources', component: ResourcesPage },
+  { path: '/book', alias: '/features', component: FeaturesPage },
+  { path: '/companion', alias: '/journey', component: JourneyPage },
+  { path: '/examples', alias: '/snippets', component: SnippetsPage },
+  { path: '/worksheets', alias: '/cheatsheet', component: CheatsheetPage },
+  { path: '/labs', alias: '/resources', component: ResourcesPage },
   { path: '/author', component: AuthorPage },
   { path: '/buy', component: BuyPage },
   { path: '/errata', component: ErrataPage },

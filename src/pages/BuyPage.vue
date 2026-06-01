@@ -1,231 +1,158 @@
 <template>
-  <!-- Hero -->
   <header class="buy-hero">
     <div class="container">
-      <h1>Get Your Copy</h1>
-      <p>The AI Augmented Architect is available in digital and print formats.</p>
+      <h1>Get the Book</h1>
+      <p>The AI-Augmented Architect is positioned as both a serious architecture book and a practical companion experience.</p>
     </div>
   </header>
 
-  <!-- Buy Options -->
   <section class="buy-section">
+    <div class="container buy-shell">
+      <div class="buy-card featured">
+        <div class="buy-badge">Book + Companion</div>
+        <h2>Why this book stands out</h2>
+        <ul class="points-list">
+          <li v-for="point in buyPagePoints" :key="point">{{ point }}</li>
+        </ul>
+      </div>
+
+      <div class="buy-card">
+        <h2>Launch interest</h2>
+        <p>
+          The website is being positioned now so it can market the book, support the launch,
+          and continue serving readers after purchase with practical resources.
+        </p>
+        <div class="buy-actions">
+          <a href="mailto:klaus@barkhausen.us?subject=The%20AI-Augmented%20Architect%20Launch%20Updates" class="btn btn-primary btn-lg">
+            Request launch updates
+          </a>
+          <a href="mailto:klaus@barkhausen.us?subject=The%20AI-Augmented%20Architect%20-%20Review%20Copy%20or%20Workshop" class="btn btn-secondary btn-lg">
+            Ask about review copies or workshops
+          </a>
+        </div>
+        <p class="buy-note">Once retail links are live, this page can be updated with Amazon, direct sales, and print options.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="buy-paths">
     <div class="container">
-      <div class="buy-content">
-        <p class="buy-subtitle">Available in digital formats</p>
-
-        <div class="buy-options">
-          <div class="buy-card featured">
-            <div class="buy-badge">Most Popular</div>
-            <div class="buy-icon">📱</div>
-            <h3>Kindle Edition</h3>
-            <div class="buy-price">
-              <span class="price">$29.99</span>
-            </div>
-            <ul class="buy-features">
-              <li>✓ Instant delivery</li>
-              <li>✓ Read on any device</li>
-              <li>✓ Searchable text</li>
-              <li>✓ Free updates</li>
-            </ul>
-            <a href="#" class="btn btn-primary btn-lg buy-btn">
-              Buy on Amazon Kindle
-            </a>
-            <p class="buy-note">Coming this week</p>
-          </div>
-
-          <div class="buy-card">
-            <div class="buy-icon">📖</div>
-            <h3>Paperback</h3>
-            <div class="buy-price">
-              <span class="price">$49.99</span>
-            </div>
-            <ul class="buy-features">
-              <li>✓ Physical book</li>
-              <li>✓ Premium printing</li>
-              <li>✓ Great for reference</li>
-              <li>✓ Ships worldwide</li>
-            </ul>
-            <a href="#" class="btn btn-secondary btn-lg buy-btn">
-              Buy Paperback
-            </a>
-            <p class="buy-note">Coming soon</p>
-          </div>
-        </div>
-
-        <div class="buy-guarantee">
-          <div class="guarantee-icon">🛡️</div>
-          <p>
-            <strong>100% Satisfaction Guarantee</strong><br>
-            Not satisfied? Amazon offers easy returns within 7 days.
-          </p>
-        </div>
+      <div class="section-header">
+        <h2>Three reasons to visit the site before and after buying</h2>
+      </div>
+      <div class="path-grid">
+        <article class="path-card">
+          <h3>Before purchase</h3>
+          <p>Visitors can quickly understand the thesis, audience, structure, and practical value of the book.</p>
+        </article>
+        <article class="path-card">
+          <h3>During evaluation</h3>
+          <p>Examples, worksheets, and labs show that the book is grounded in real architecture work, not buzzwords.</p>
+        </article>
+        <article class="path-card">
+          <h3>After purchase</h3>
+          <p>The companion materials keep the site useful, which makes the book more referable and easier to recommend inside organizations.</p>
+        </article>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import { buyPagePoints } from '../data/siteContent'
 </script>
 
 <style scoped>
 .buy-hero {
-    padding: 160px 0 40px;
-    background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+  padding: 160px 0 40px;
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
 }
 
 .buy-hero h1 {
-    margin-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
 }
 
 .buy-section {
-    padding: var(--space-3xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
-.buy-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+.buy-shell,
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
 }
 
-.buy-subtitle {
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-xl);
-}
-
-.buy-options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
-    margin-bottom: var(--space-xl);
-}
-
-.buy-card {
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-xl);
-    position: relative;
-    text-align: center;
+.buy-card,
+.path-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  position: relative;
 }
 
 .buy-card.featured {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
 }
 
 .buy-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    color: white;
-    padding: var(--space-xs) var(--space-md);
-    border-radius: var(--radius-full);
-    font-size: 0.8rem;
-    font-weight: 600;
-    white-space: nowrap;
+  display: inline-flex;
+  margin-bottom: var(--space-lg);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full, 999px);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
-.buy-icon {
-    font-size: 3rem;
-    margin-bottom: var(--space-md);
+.buy-card h2,
+.path-card h3 {
+  margin-bottom: var(--space-md);
 }
 
-.buy-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-md);
+.points-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-left: 1rem;
 }
 
-.buy-price {
-    margin-bottom: var(--space-lg);
+.points-list li,
+.path-card p {
+  color: var(--color-text-muted);
 }
 
-.buy-price .price {
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.points-list li {
+  list-style: disc;
 }
 
-.buy-features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: var(--space-lg);
-    text-align: left;
-}
-
-.buy-features li {
-    padding: var(--space-xs) 0;
-    color: var(--color-text-secondary);
-}
-
-.buy-card .btn {
-    display: inline-block;
-    width: 100%;
-    padding: var(--space-md);
-    border-radius: var(--radius-md);
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.buy-card .btn:hover {
-    transform: translateY(-2px);
-}
-
-.buy-card .btn-primary {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    color: white;
-}
-
-.buy-card .btn-primary:hover {
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-}
-
-.buy-card .btn-secondary {
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    color: var(--color-text);
-}
-
-.buy-card .btn-secondary:hover {
-    border-color: var(--color-primary);
+.buy-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin: var(--space-xl) 0 var(--space-lg);
 }
 
 .buy-note {
-    margin-top: var(--space-sm);
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
+  font-size: 0.9rem;
 }
 
-.buy-guarantee {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-md);
-    padding: var(--space-lg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    background: var(--color-bg-secondary);
+.buy-paths {
+  background: var(--color-bg-elevated);
+  border-top: 1px solid var(--color-border);
 }
 
-.guarantee-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
+.path-grid {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.buy-guarantee p {
-    text-align: left;
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-    .buy-options {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 968px) {
+  .buy-shell,
+  .path-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

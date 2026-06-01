@@ -1,116 +1,88 @@
-# augmented-architect.ai
+# The AI-Augmented Architect website
 
-Official website for **"The AI Augmented Architect"** book by Klaus Barkhausen.
+Official website and companion hub for **The AI-Augmented Architect** by Klaus Barkhausen.
 
-## About the Book
+## Positioning
 
-The definitive guide to mastering Claude Code and Cursor for AI-augmented software development.
+This site now serves two jobs at once:
 
-- 34 comprehensive chapters
-- 9,000+ lines of content
-- 100+ code examples
-- Covers latest April 2026 features
+1. **Book marketing site**
+   - Explains the thesis of the book
+   - Shows who it is for
+   - Presents the table of contents and author positioning
+   - Provides launch and contact paths
 
-## Tech Stack
+2. **Book companion site**
+   - Hosts examples aligned to the book
+   - Provides worksheets and forms teams can reuse
+   - Provides labs for workshops and internal planning sessions
+   - Tracks errata and future companion materials
 
-- **Vue.js 3** with Composition API (`<script setup>`)
-- **Vue Router** for client-side routing
-- **Vite** for build tooling and dev server
+## Content structure
 
-## Local Development
+The site is organized around the new manuscript structure:
+
+- **Home**: overview and positioning
+- **Book**: six-part table of contents and core promise
+- **Companion**: chapter-to-resource map
+- **Examples**: reference artifacts tied to the book’s themes
+- **Worksheets**: reusable planning and review forms
+- **Labs**: facilitated exercises for teams
+- **Author**: Klaus Barkhausen profile
+- **Get the Book**: launch and inquiry page
+- **Errata**: corrections and clarifications
+
+Legacy routes from the older version of the site are preserved as aliases in `src/router.js`.
+
+## Tech stack
+
+- Vue 3
+- Vue Router
+- Vite
+
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-The dev server starts at `http://localhost:5173`.
+Dev server: `http://localhost:5173`
 
-## Build for Production
+## Production build
 
 ```bash
 npm run build
 ```
 
-Output goes to the `dist/` folder.
+Build output: `dist/`
 
-## Preview Production Build
+## Preview production build
 
 ```bash
 npm run preview
 ```
 
-## Deployment (Cloudflare Pages)
+## Important source file
 
-1. Connect this repository to Cloudflare Pages
-2. Set build settings:
-   - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
-3. Add custom domain: `augmented-architect.ai`
+Companion and marketing copy is centralized in:
 
-## Project Structure
+- `src/data/siteContent.js`
 
-```
-├── index.html                  # SPA entry point
-├── package.json                # Dependencies and scripts
-├── vite.config.js              # Vite configuration
-├── public/
-│   ├── favicon.svg             # Site icon
-│   └── images/                 # Static images (logo, book cover, author photo)
-├── src/
-│   ├── main.js                 # App entry — mounts Vue + router
-│   ├── App.vue                 # Root component (NavBar + router-view + Footer)
-│   ├── router.js               # Vue Router routes
-│   ├── assets/
-│   │   └── styles.css          # Global stylesheet
-│   ├── components/
-│   │   ├── NavBar.vue          # Shared navigation bar
-│   │   └── SiteFooter.vue      # Shared footer
-│   └── pages/
-│       ├── HomePage.vue        # Landing page
-│       ├── FeaturesPage.vue    # What's Inside
-│       ├── JourneyPage.vue     # Your Journey
-│       ├── SnippetsPage.vue    # Code Snippets browser
-│       ├── CheatsheetPage.vue  # Quick Reference Cheat Sheet
-│       ├── ResourcesPage.vue   # Videos & Changelog
-│       ├── AuthorPage.vue      # About the Author
-│       ├── BuyPage.vue         # Get the Book
-│       └── ErrataPage.vue      # Errata
-```
+That file contains:
+- book structure
+- audience positioning
+- example artifacts
+- worksheet templates
+- lab descriptions
+- buy-page messaging
 
-## Routes
+## Deployment
 
-| Path | Page |
-|------|------|
-| `/` | Home |
-| `/features` | What's Inside |
-| `/journey` | Your Journey |
-| `/snippets` | Code Snippets |
-| `/cheatsheet` | Cheat Sheet |
-| `/resources` | Resources |
-| `/author` | About the Author |
-| `/buy` | Get the Book |
-| `/errata` | Errata |
+Typical static deployment settings:
 
-## Updating
-
-### Amazon Links
-
-When the book is published on Amazon, update the buy buttons in `src/pages/BuyPage.vue`:
-
-```html
-<a href="https://amazon.com/dp/YOUR-ASIN" class="btn btn-primary btn-lg buy-btn">
-    Buy on Amazon Kindle
-</a>
-```
-
-### Adding Errata
-
-Update `src/pages/ErrataPage.vue` with the errata table (example provided in comments).
-
-### Adding Changelog Items
-
-Add new items to the changelog section in `src/pages/ResourcesPage.vue`.
+- Build command: `npm run build`
+- Output directory: `dist`
 
 ## License
 
