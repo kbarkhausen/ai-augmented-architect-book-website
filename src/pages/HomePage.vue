@@ -3,6 +3,7 @@
     <div class="hero-bg"></div>
     <div class="container hero-content">
       <div class="hero-text">
+        <img src="/images/homepage-emblem.jpg" alt="The AI-Augmented Architect emblem" class="hero-emblem">
         <div class="hero-badge">📘 June 2026 release • Companion site + launch platform</div>
         <h1>{{ siteMeta.heroTitle }}</h1>
         <p class="hero-subtitle">Architecture for the age of AI-augmented delivery</p>
@@ -129,6 +130,17 @@ import { audiences, companionCards, siteMeta } from '../data/siteContent'
 </script>
 
 <style scoped>
+.hero-emblem {
+  width: min(220px, 48vw);
+  height: auto;
+  display: block;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(15, 15, 19, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  background: white;
+}
+
 .positioning {
   background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-elevated) 100%);
   border-top: 1px solid var(--color-border);
@@ -216,6 +228,11 @@ import { audiences, companionCards, siteMeta } from '../data/siteContent'
   .cta-strip-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero-emblem {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 </style>
