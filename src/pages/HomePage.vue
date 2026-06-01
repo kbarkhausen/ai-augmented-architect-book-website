@@ -3,7 +3,7 @@
     <div class="hero-bg"></div>
     <div class="container hero-content">
       <div class="hero-text">
-        <img src="/images/homepage-emblem.jpg" alt="The AI-Augmented Architect emblem" class="hero-emblem">
+        <img src="/images/homepage-emblem-dark.jpg" alt="The AI-Augmented Architect emblem" class="hero-emblem">
         <div class="hero-badge">📘 June 2026 release • Companion site + launch platform</div>
         <h1>{{ siteMeta.heroTitle }}</h1>
         <p class="hero-subtitle">Architecture for the age of AI-augmented delivery</p>
@@ -136,9 +136,32 @@ import { audiences, companionCards, siteMeta } from '../data/siteContent'
   display: block;
   margin-bottom: var(--space-lg);
   border-radius: var(--radius-xl);
-  border: 1px solid rgba(15, 15, 19, 0.08);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-  background: white;
+  opacity: 0.94;
+  filter: brightness(1.06) contrast(1.02);
+  mix-blend-mode: screen;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: min(220px, 48vw);
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, rgba(99, 102, 241, 0.07) 42%, transparent 72%);
+  filter: blur(26px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-text > * {
+  position: relative;
+  z-index: 1;
 }
 
 .positioning {
